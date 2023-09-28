@@ -40,7 +40,7 @@ TIPOS DE VARIABLES PRIMITIVAS EN JAVA:
         double (ocupa 64 beats) NO necesita letra
 
     Caracteres:
-        char 'simples' 
+        char 'simples'  ///// Recordar ejemplo hola = h
     
     DESICIÓN:
         boolean (true false)
