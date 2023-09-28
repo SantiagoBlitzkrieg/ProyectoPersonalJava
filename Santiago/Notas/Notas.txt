@@ -1,0 +1,65 @@
+/*
+Historia:
+Creado por Sun Microsystems Inc. en el año 1995.
+Fue creado por un grupo de trabajo liderado por James Gosling
+
+Java es un lenguaje de desarrollo de poróposito general, siendo válido para realizar 
+todo tipo de aplicaciones profesionales.
+
+¿qué lo hace distinto?
+Los programas creados por Java son INDEPENDIENTES de la arquitectura (windows, mac)
+Permite escribir Applets.
+APPS INTRARREDES; CLIENTE/SERVIDOR
+
+Se pueden programar Aplicaciones Independientes y applets
+
+Applets (pequeños programas en html).
+
+
+Es intrínsecamente Orientado a Objetos.
+Tiene gran funcionalidad gracias a sus librerías
+No tiene punteros manejables por el programador.
+El manejo de memoria lo gestiona el propio lenguaje.
+Genera aplicaciones con pocos errores posibles (riguroso)
+Incorpora Multi- Threading (hilos)
+
+VARIABLES:
+
+TIPOS DE VARIABLES PRIMITIVAS EN JAVA:
+    *Variable es un espacio de memoria donde asignas un valor:
+    *No se puede poner null en primitivos
+    ENTEROS:
+
+        byte (ocupa 8 bits) va de -128 a 127 
+        short (ocupa 16 bits) va de  -32.768 a 32.767
+        int (ocupa 32) *Más utilizado* 
+        long (64 bits)
+
+    REALES:
+        float (ocupa 32 beats) ##f; el f indica que es float
+        double (ocupa 64 beats) NO necesita letra
+
+    Caracteres:
+        char 'simples' 
+    
+    DESICIÓN:
+        boolean (true false)
+
+TIPOS DE VARIABLES  NO PRIMITIVAS EN JAVA:
+    *LOS DATOS NO PRIMITIVOS TIENE MÉTODOS, LOS PRIMITIVOS NO
+    CADENAS:
+        String palabra = "hola gononea";
+            *la palabra tiene metodos
+
+
+
+CONSTANTES:
+*Espacio de memoria que no va a cambiar NUNCA
+
+    final int numero = 10; //constante SOLO ES PONER final
+
+
+ENTRADA Y SALIDA DE DATOS:
+
+
+*/
