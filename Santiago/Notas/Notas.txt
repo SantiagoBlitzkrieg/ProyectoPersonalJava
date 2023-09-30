@@ -60,6 +60,19 @@ CONSTANTES:
 
 
 ENTRADA Y SALIDA DE DATOS:
+    Consola: Scanner
+    Sin consola: joptionpage
 
+OPERADORES ARITMÉTICOS:
+    Residuo: num1  %  num2 
+    Combinados:
+        numero += 5  // le sumo 5 a la variable numero ===> numero = numero+5
+        numero -= 5 // lo mismo en resta
+        numero *= 5
+        numero /= 5
+        numero %=5
+    Incremento: 
+        x++ // es igual a x +1
+        
 
 */
