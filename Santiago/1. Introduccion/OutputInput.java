@@ -5,6 +5,7 @@
 package com.mycompany.outputinput;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class OutputInput {
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        /*Scanner entrada = new Scanner(System.in);
         String cadena;
         int numero;
         
@@ -28,6 +29,24 @@ public class OutputInput {
         
         numero = entrada.nextInt();
                 
-        System.out.println ("El numero es: " + numero);
+        System.out.println ("El numero es: " + numero); por consola*/
+        
+        String cadena; // El siguiente código es para un método más gráfico
+        int entero; 
+        char letra;
+        double decimal;
+        
+        cadena = JOptionPane.showInputDialog("Digite una cadena ");
+        entero = Integer.parseInt(JOptionPane.showInputDialog("Digite un entero ")); //no se puede guardar un string en entero
+        // ese Integer.parseInt trabsforma el texto en enteros
+        letra = JOptionPane.showInputDialog("Digite un caracter").charAt(0);// ese charAt convierte texto a caracter
+        decimal = Double.parseDouble(JOptionPane.showInputDialog("Digite un decimal"));
+        JOptionPane.showMessageDialog(null, "La cadena es: "+cadena);
+        JOptionPane.showMessageDialog(null, "El numero entero es: "+entero);
+        JOptionPane.showMessageDialog(null, "La letra es: "+letra);
+        JOptionPane.showMessageDialog(null, "El numero decimal es: "+decimal);
+        
+    
     }    
 }
+ 
