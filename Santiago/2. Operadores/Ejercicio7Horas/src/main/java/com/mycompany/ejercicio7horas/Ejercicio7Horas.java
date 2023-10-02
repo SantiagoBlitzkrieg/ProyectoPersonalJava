@@ -28,6 +28,19 @@ public class Ejercicio7Horas {
         
         System.out.println("Dado un total de "+horas+" horas hay "+ semanas + " semanas, "+ dias+ " dias y "
                 + horasRestantes + " horas.");
+        
+        /* también se podia hacer de forma mucho mas facil:
+        
+        int horas, dias, semanas, horasRestantes;
+        System.out.print("Digite las horas totales: ");
+        horas = entrada.nextDouble();
+
+        semanas = horas/168;
+        dias=horas%168 /24;   // eses % es del reciduo
+        horasRestantes= dias%24;
+
+        Era un popco mas sencillo*/ 
+        
     
     }
 }

@@ -48,9 +48,9 @@ TIPOS DE VARIABLES PRIMITIVAS EN JAVA:
 TIPOS DE VARIABLES  NO PRIMITIVAS EN JAVA:
     *LOS DATOS NO PRIMITIVOS TIENE MÉTODOS, LOS PRIMITIVOS NO
     CADENAS:
-        String palabra = "hola gononea";
-            *la palabra tiene metodos
+        String palabra = "hola gononea"; // la palabra tiene metodos
 
+            
 
 
 CONSTANTES:
@@ -73,6 +73,26 @@ OPERADORES ARITMÉTICOS:
         numero %=5
     Incremento: 
         x++ // es igual a x +1
-        
+        x-- // le resto 1
+
+            EJEMPLO:
+            int x=5;
+            int y;
+
+            y=x++;  // Si pongo ++x primero se suma 1 a x y luego y=x... por lo que y=6
+
+            System.out.println(y); //da 5, primero se asigna y=x y despues se realiza la opción de x++
+            System.out.println(x); // da 6
+
+MATH:
+
+    double raiz = Math.sqrt(9); // Raiz cuadrada
+    int raiz2 = (int)Math.sqrt(9); //convertimos el double del sqrt a entero
+    double base =5, exponente= 2;
+    double respuesta = Math.pow(base, exponente); //exponencial
+    double numero = 4.56;
+    long redondea = Math.round(numero); //Sale 5, redondeo 4.56
+    double numerorandom =Math.random();//random
+
 
 */
