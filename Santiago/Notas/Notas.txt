@@ -40,7 +40,8 @@ TIPOS DE VARIABLES PRIMITIVAS EN JAVA:
         double (ocupa 64 beats) NO necesita letra
 
     Caracteres:
-        char 'simples'  ///// Recordar ejemplo hola = h
+        char 'simples'  ///// Recordar ejemplo hola = h  
+                // metodos: Character.toUpperCase(caracter) //CONVIERTE EL CARACTER EN MAYUSCULAS
     
     DESICIÓN:
         boolean (true false)
@@ -61,7 +62,7 @@ CONSTANTES:
 
 ENTRADA Y SALIDA DE DATOS:
     Consola: Scanner
-    Sin consola: joptionpage
+    Sin consola: JOptionPane
 
 OPERADORES ARITMÉTICOS:
     Residuo: num1  %  num2 
@@ -93,6 +94,71 @@ MATH:
     double numero = 4.56;
     long redondea = Math.round(numero); //Sale 5, redondeo 4.56
     double numerorandom =Math.random();//random
+
+
+
+CONDICIONALES:
+    if/else:    //Condicionales Simples y dobles
+        if(condicion){         //Para hacer un if compuesto de dos o mas condiciones debo colocar el &&
+                               //Para hacer el operador "o" pongo  ||            
+            instruccion1;
+        }
+        else{
+            instruccion2;
+        }
+
+        ejemplo: 
+        int numero, dato= 5;
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero :"));  //convierto String en int
+
+        if(numero == dato){    // == es que si el numero es IGUAL a dato
+                               // != es que si el nuemro es DIFERENTE a dato 
+                               // <= menor o igual que; >= mayor o igual que; 
+            joptionpage.showMessageDialog(null,"El numero es 5");
+        }
+            else{
+                JOptionPane.showMessageDialog(null, "El numero es diferente de 5");
+        }
+
+    switch: //Condicionales multiples
+        switch(dato){
+            case 1:Instrucciones1;
+            break;
+            case 2: Instrucciones;
+            break;
+            ...
+            case n: Instrucciones n;
+            break;
+            default: CasoContrario;
+            break;
+        }
+
+        EJEMPLO:
+        int dato;
+        dato0Integer.parseInt(JOptionPane.showMessageDialog("Digite un numero entre 1 y 3"));
+
+        switch(dato){
+            case 1: JOptionPane.showMessageDialog(null, "Es el numero 1");
+                break; //cierra el código y la condicion, si no lo pongo, no sale de la sentencia switch hasta que encuentre un break
+            case 2: JOptionPane.showMessageDialog(null, "Es el numero 2");
+                break;
+            case 3: JOptionPane.showMessageDialog(null, "Es el numero 3");
+                break;
+            default: JOptionPane.showMessageDialog(null, "El numero no está dentro del rango de 1 a 3");
+
+        } 
+
+    Operador Ternario:   //Forma inusual pero interesante
+        valor = (Condicion) ? valor 1: valor 2
+        String mensaje;
+        EJEMPLO:
+        numero= Integer.parseInt(JOptionPane.showInputDialog("Digite un numero: "));       
+
+        mensaje = (numero %2==0) //numero dicidido en dos tiene que dar de reciduo 0 // ? " Es par": "Es impar"; // SI ES PAR EL STRING "Es par" se guarda en mensaje.... si no se guarda "Es impar"
+
+        JOptionPane.showMessageDialog(null, mensaje);
+
+    
 
 
 
