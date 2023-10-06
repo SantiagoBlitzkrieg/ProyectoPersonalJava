@@ -149,12 +149,12 @@ CONDICIONALES:
         } 
 
     Operador Ternario:   //Forma inusual pero interesante
-        valor = (Condicion) ? valor 1: valor 2
+        valor = (Condicion) ? valor 1 : valor 2
         String mensaje;
         EJEMPLO:
         numero= Integer.parseInt(JOptionPane.showInputDialog("Digite un numero: "));       
 
-        mensaje = (numero %2==0) //numero dicidido en dos tiene que dar de reciduo 0 // ? " Es par": "Es impar"; // SI ES PAR EL STRING "Es par" se guarda en mensaje.... si no se guarda "Es impar"
+        mensaje = (numero %2==0)? " Es par": "Es impar"; // *Numero dividido en dos tiene que dar de reciduo 0 ==>  SI ES PAR EL STRING "Es par" se guarda en mensaje.... si no se guarda el "Es impar"
 
         JOptionPane.showMessageDialog(null, mensaje);
 

@@ -44,7 +44,7 @@ public class Ejercicio10Calculadora {
         
        //Es más sencillo con Switch:
         
-        /*(operacion){
+        /*switch (operacion){
         case 'S': resultado=numero1+numero2;
             JOptionPane.showMessageDialog(null, "El resultado de la suma es "+ resultado);
             break;
