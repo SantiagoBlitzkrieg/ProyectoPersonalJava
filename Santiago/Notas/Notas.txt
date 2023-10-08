@@ -158,7 +158,49 @@ CONDICIONALES:
 
         JOptionPane.showMessageDialog(null, mensaje);
 
-    
+CICLOS O BUCLES: 
+
+    Ciclo While (mientras): //PRIMERO LA CONDICION DEBE CUMPLIRSE PARA CORRER EL BUCLE WHILE.
+        while (condicion){     //MIENTRAS se cumplan las condiciones se va a repetir las intrucciones.
+            instrucciones;
+        }
+
+        EJEMPLO:
+        
+        int i = 1;
+        int contador;
+        while (i<=10){
+            System.out.println(i); // va a hacer 1, 2, 3, 4, ..., 10.
+            i++    // avanza de 1 en 1... si quiero restar seria i--
+        }
+
+    Ciclo Do While:  //PRIMERO EJECUTA LAS INSTRUCCIONES Y DESPUES REVISA SI LA CONDICION SE CUMPLE
+        do{
+            Instrucciones;
+        }while(condicion);
+
+        EJEMPLO:
+
+        int i = 111;
+
+        do{
+            System.out.println(i) // Primero imprime 11
+            i++
+        }while (i>=10);  //Luego ve que no se cumple la instruccion y no sigue el bucle.
+
+    Ciclo For
+        for (inicializacion; condicion; aumento o decremento){
+            Instrucciones;
+        }
+
+        EJEMPLO:
+        for(int i=1; i<=10; i++){     //no necesita un int i por fuera del bucle
+            System.out.prinln(i); //Se imprime 1, 2, 3, ..., 10
+            
+        }       
+
+
+
 
 
 
