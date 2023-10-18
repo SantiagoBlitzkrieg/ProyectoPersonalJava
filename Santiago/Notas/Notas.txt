@@ -199,9 +199,49 @@ CICLOS O BUCLES:
             
         }       
 
+ARRAYS (arreglos, vectores): Es una estructura de datos que nos permite almacenar un conjunto de datosde un mismo tipo.
+*Posiciones contiguas de memoria.
+*El tamaño de los arrays se declara en un primer momento y no puede cambiar luego durante la ejecucion del programa.
 
+    Arrays Unidimencionales:
+        Tipo_de_variable[] Nombre_del_array = new Tipo_de_variable[dimension];
+        Ejemplo:
+            int[] edad = new int[4];
+            char[] sexo = new char[2];
+    Dar valores:
+        En caso de que queramos inicializarlos con valores propios, haremos esto:
+            int[] numeros = new int[3]; //Array con 3 espacios
+            // existen 2 formas:
+                1. numeros[0]=5; //pone un 5 en el primer espacio del arreglo
+                   numerso[1]=3; //pone un 3 en el segundo espacio del arreglo
+                   numeros[2]=2;         
+                2. int[] numeros = {5,7,9}; //Define los arreglos                        
+    Leer el array:
+        for (int i = 0; i<3;i++){
+            System.out.println(numeros[i]); //Se imprime 5, 3 y 2
+        }
+    Llenar un arreglo:
+        for (int i=0; i<nElementos;i++){
+            System.out.print("");
+            letras [i] = entrada.next().charAt(0);  //Se va llenando el array
+        }
+    
+    FOR EACH (Otra manera de imprimir un arreglo de manera más eficaz y rapida):
+        String [] nombres = {"Alejandro", "Juan", "Santiago"};
 
+        for (int i=0;i<6;i++){  // Seria la forma de for, en donde conozco el numero de elementos que tiene el arreglo
+            System.out.println(nombres[i]);
+        }
 
+        for (int i=0;nombres.length;i++){   //Con el length puedo desconocer el numero de datos del array... Eso lo hace por mi
+            System.out.println(nombres[i]);
+        }
+
+        //AHORA SI, EL BUCLE FOR MEJORADO
+
+        for (String i:nombres){  //Este es el for each, dice que dentro del interador i se vana a copiar todos los nombres que hay en el arreglo
+            System.out.println(i);
+        } //Para que pueda funcionar primero debo tener elementos en mi array SIEMPRE.
 
 
 */
