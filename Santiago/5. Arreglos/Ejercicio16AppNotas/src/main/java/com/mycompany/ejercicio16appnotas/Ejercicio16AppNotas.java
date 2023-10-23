@@ -50,7 +50,7 @@ public class Ejercicio16AppNotas {
             System.out.println("Seleccione al alumno del que quiera saber el promedio durante todo el año: ");
             alumno= entrada.nextInt()-1;
             
-        }while(alumno<0|| alumno>5);
+        }while(alumno<0|| alumno>4);
         
         mediaAlumno=(notaGrupo1Semestre[alumno]+notaGrupo2Semestre[alumno]+notaGrupo3Semestre[alumno])/3;        
         System.out.println("La media del alumno es de "+mediaAlumno);
