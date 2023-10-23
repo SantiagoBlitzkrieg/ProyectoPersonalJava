@@ -6,7 +6,7 @@ Fue creado por un grupo de trabajo liderado por James Gosling
 Java es un lenguaje de desarrollo de poróposito general, siendo válido para realizar 
 todo tipo de aplicaciones profesionales.
 
-¿qué lo hace distinto?
+¿Qué lo hace distinto?
 Los programas creados por Java son INDEPENDIENTES de la arquitectura (windows, mac)
 Permite escribir Applets.
 APPS INTRARREDES; CLIENTE/SERVIDOR
@@ -243,5 +243,128 @@ ARRAYS (arreglos, vectores): Es una estructura de datos que nos permite almacena
             System.out.println(i);
         } //Para que pueda funcionar primero debo tener elementos en mi array SIEMPRE.
 
+METODOS DE ORDENAMIENTO: (Ordenar los elementos de un arreglo):
 
+    Metodo Burbuja (Es el algoritmo de ordenamiento mas sencillo, pero no el mas eficiente):
+    *Funciona revisando cada elemento de la lista que va a ser ordenada con el siguiente, intercambiandolos de posicion si estan en un orden equivocado.
+    *Va uno por uno... tal como me explico Nicolas
+    *Los numeros más pequeños son los que van a subir a la superficie... como burbujas 
+    
+        //Ej: Si numeroActual> numeroSiguiente ==> cambio 
+            45213 - 4 no es mayor a 5 pero 5 si es mayor a 2...
+            42513 - 5 es mayor a 1
+            42153 - 5 es mayor a 3
+            42135 - 4 es mayor a 2 
+            24135 - 4 es mayor a 2.. y a 3
+            21345 - 2 es mayor a 1
+            12345 - 2 no es mayor a 3 ni 3 es mayor a 4 ni 4 es mayor a 5... YA ESTA ORDENADO.
+    
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int aux;
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Metodo burbuja
+            for (int i=0; i<(nElementos-1);i++){ //Se pone ese nElementos-1 porque no es necesario que el programa recorra todos los espacios del arreglo
+                for (int j=0; j<(nElementos-1);j++){
+                    if(arreglo[j]> arreglo[j+1]){ //Si numeroActual> numeroSiguiente
+                        aux = arreglo[j];
+                        arreglo[j] = arreglo [j+1];
+                        arreglo [j+1] = aux;
+                    }
+                }
+            }
+            // Si lo quiero de forma decreciente solo falta imprimir el arreglo de atras para adelante jajaja.
+
+    Ordenamiento por Insercion: (Requiere O(n^2) operaciones para ordenar una lista de n elementos):
+        ejm:53412 (Hay una flecha que está "observando" el 5)
+            53412 (En la izquierda de 5 hay un numero mayor a este? No... porque ni hay numero) 
+                 (La flechita pasa al 3. Hay un numero mayor a su izquierda? SI ==> CAMBIO )
+            35412 (El numero a la izquieda es mayor que 3? No... porque no existe)
+                 (La flechita cambia al 4)
+            ...
+            34512 (La flechita esta en 1... la izquierda de 1 es mayor a este? Si ==> CAMBIO) 
+            34152 (La izquierda de 1 siqgue siendo mayor ==>CAMBIO)
+            ...
+            13452 .... Y así 
+
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int pos;
+            int aux
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Ordenamiento por Insercion 
+            for (int i=0; i<nElementos; i++){
+                pos = i;
+                aux = arreglo[i];
+
+                while((pos>0) && (arreglo [pos-1]>aux)){
+                    arreglo [pos] = arreglo [pos-1];
+                    pos--;
+                }
+                arreglo [pos] = aux;
+            }
+
+    Ordenamiento por Seleccion:
+        1. Buscar el minimo elemento de la lista.
+        2. Intercambiar con el primer elemento.
+        3. Buscar el minimo del resto de la lista.
+        4. Intercambiarlo con el segundo.
+        5. Seguir asi.
+
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int aux;
+            int min;
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Ordenamiento por Seleccion 
+            for (int i=0; i<nElementos; i++){
+                min = i;
+                for (int j=i+1;j<nElementos; j++){
+                    if (arreglo [j] < arreglo [min]){
+                        min=j;
+                    }
+                }
+                aux = arreglo[i];
+                arreglo[i] = arreglo[min];
+                arreglo[min]=aux;
+            }
 */
