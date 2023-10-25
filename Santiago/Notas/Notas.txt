@@ -367,4 +367,108 @@ METODOS DE ORDENAMIENTO: (Ordenar los elementos de un arreglo):
                 arreglo[i] = arreglo[min];
                 arreglo[min]=aux;
             }
+
+    Busquedas: 
+        Busqueda Secuencial: (Buscar un determinado elemento en un array):
+        *Algoritmo sencillo, no importa si está ordenado o no el array ya que va a buscar todas las posiciones del arreglo
+        *No es muy eficiente
+
+        CODIGO:
+            int arreglo[]= {4,1,5,2,3};
+            int dato;
+            booleam band =false;
+
+            dato= Integer.ParseInt (JOptionePane. showInputDialog("Digite el numero que quiere buscar"));
+
+            //Busqueda Secuencial:
+            int i =0;
+
+            while(i<5 && band ==false){
+                if (dato==arreglo[i]){
+                    band = true;
+                }
+                i++
+            }
+            
+            if (bandera==false){
+                JOptionpage.showMessageDialog(null, "El numero no se encuentra en el arreglo");
+            }else{
+                JOptionePane.showMessageDialog(null, "El numero ha sido encontrado en la posicion "+ (i-1));
+            }
+
+        Busqueda Binaria:
+        *Se utiliza cuando el arreglo está ordenado de forma ascendente
+            CODIGO:
+                int arreglo [] = {1,2,3,4,5}; //Esta en forma ascendente
+                int dato, inf, sup, mitad, i=0; 
+                boolean band =f alse;
+
+            dato= Integer.ParseInt (JOptionePane. showInputDialog("Digite el numero que quiere buscar"));
+
+            //Busqueda Secuencial:
+            inf = 0;
+            sup = 5;
+            i = 0;
+
+            mitad = (inf+sup)/2;
+
+            while(inf<=sup && i<5){
+                if (arreglo[mitad]==dato){
+                    band =true;
+                    break;
+                }
+                if (arreglo[mitad > dato]){
+                    sup =mitad;
+                    mitad =(inf+sup)/2
+                }
+                if (arreglo[mitad < dato]){
+                    inf = mitad;
+                    mitad =(inf+sup)/2
+                }
+                i++;
+            }
+
+            if (bandera==false){
+                JOptionpage.showMessageDialog(null, "El numero no se encuentra en el arreglo");
+            }else{
+                JOptionePane.showMessageDialog(null, "El numero ha sido encontrado en la posicion "+ mitad);
+            }
+
+MATRICES: Es un arreglo bidimensional, que necesita dos indices para acceder a sus elementos.
+*Algebra lineal ==> Tabla de n filas y m columnas cuyos elementos son todos del MISMO TIPO
+*Es un "ARRAY DE ARRAYs... O arreglo de arreglos"
+
+    CODIGO:
+        
+        // int matriz [][]={{1,2,3};{4,5,6};{7,8,9}}  //Esto seria una matriz de 3*3
+
+        int matriz [][];
+        int nFilas;
+        int nColumnas;
+        Scanner entrada= new Scanner (System.in);
+
+        nFilas= Integer.parseInt(JOptionePane,showInputDialog("Digite el numero de filas del arreglo));
+        nColumnas= Integer.parseInt(JOptionePane,showInputDialog("Digite el numero de filas del arreglo));  
+
+        matriz = new int [nFilas][nColumnas];
+        
+        for (int i=0;i<nFilas;i++){   
+            for (int j=0;j<3;j++){    
+                System.out.print(matriz["+i+"]["+j+"]: ");
+                matriz[i][j] = entrada.NextInt();          
+            } 
+
+            
+        }
+
+        System.out.println ("La matriz es: ")
+        for (int i=0;i<nFilas;i++){   //numero de filas
+            for (int j=0;j<nColumnas;j++){   //numero de columnas  
+                System.out.print(matriz[i][j]);
+            }   
+            System.out.println("");
+        }
+
+
+
 */
