@@ -451,7 +451,7 @@ MATRICES: Es un arreglo bidimensional, que necesita dos indices para acceder a s
         nColumnas= Integer.parseInt(JOptionePane,showInputDialog("Digite el numero de filas del arreglo));  
 
         matriz = new int [nFilas][nColumnas];
-        
+
         for (int i=0;i<nFilas;i++){   
             for (int j=0;j<3;j++){    
                 System.out.print(matriz["+i+"]["+j+"]: ");
@@ -469,6 +469,101 @@ MATRICES: Es un arreglo bidimensional, que necesita dos indices para acceder a s
             System.out.println("");
         }
 
+POO:
+    *No olvidar el metodo main:
+        public static void main (String [] args){
+    *Variables locales ==> Estan dentro del metodo
+    *Variables globales ==> Estan en los atributos       
+            
+    Metodos: 
+        metodos ==> public *void* (o int o lo que devuelva) nombreMetodo (){
+
+            Parametros: Es una declaracion de variables u objeto.
+                Se ponen en los () de la declaracion del metodo
+           
+           
+            Argumento: Es un valor que se envia
+                Se ponen en los () de la invocacion del metodo
+
+        *Variables locales ==> Estan dentro del metodo
+        *Variables globales ==> Estan en los atributos       
+    
+        }
+        }
+
+        Retorno de valores: 
+
+            Ejm1: 
+            public *int* sumar (int a, int b){   //El metodo suma va a devolver un int
+                int suma = a+b;   // Se crea la variable suma
+                return suma;    // Aquí me devuelve, me retorna el valor entero de suma
+            }
+            int suma =objeto.sumar(5,4);  //Para poder imprimir el valor entero utilizo la variable entera "suma"
+
+            Ejm2:
+            public String saludar (String nombre){
+                String saludo = "hola" +nombre;
+                return saludo;
+            }
+            String saludo = objeto.saludo("Alejandro");
+            System.out.println(saludo);
+
+    Constructores: Metodos especialess que NO especifican que devulven algo.
+    *No olvidar que si el mombre del parametro es el mismo nombre del atributo se utiliza this.algo
+    *this.algo (Es el atributo) = algo (es el argumento del constructor)
+
+    Sobrecarga de metodos:
+        *Sobrecarga de contructor (Hay mas de un constructor, con distintos parametros)
+        EJM:
+
+            String nombre;
+            int edad; 
+            String dni;
+
+            public Persona(String dni, int edad){  
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            public Persona (String dni){  //Sobrecarga de constructores... Tener en cuenta que sus parametros son distintos
+                this.dni=dni;
+            }
+
+            public void correr (){
+                System.out.prinln("Soy"+nombre+ ", tengo "+edad+ "años y estoy corriendo una maraton" );
+            }
+
+            public void correr (int km){    //Sobrecarga de metodos. Tener en cuenta que tiene distintos parametros (cantidad o tipo) ya que de esta forma java puede diferenciarlos
+                System.out.prinln("He corrido "+ km+ " kilometros );
+            }
+
+    Modificadores de Acceso = 
+        CODIGO:
+            package paquete1;
+            public class Clase1 {
+                int atributo;   //Tiene un modificador de uso por defecto por lo que no especifico nada
+            }
+            package paquete1;
+            public class Clase2{
+                public static void main(String[] args){
+                    Clase1 objeto1= new Clase1();
+
+                    objeto1.atributo1=15;  //Al ser el atributo1 del objeto1 un atributo que tiene un modificador de uso por defecto, puedo acceder desde otra clase y modificar ese atributo
+                }
+            }
+
+            package paquete2; //otro paquete
+            import paquete1.Clase1;  //Importo la clase de otro paquete
+            public class Clase3{
+                public static void main (String[]args){
+                    Objeto1.atributo1=15;  //Pondria error, ya que el atributo 1, tiene un modificador de uso que si bien permite acceder a el desde clases del mismo paquete, no plo permitiria 
+                                           ante clases de distintos paquetes... Para que si se pudiera tocaria poner en el atributo de la Clase1:
+                                                    *public* int atributo;
+                        
+                }
+            }
+        
+        Modificador de Acceso PRIVATE: Restringe el atributo para que solo pueda ser utilizado por metodos de la misma clase. Ninguna otra clase puede acceder a el.
 
 
 */
