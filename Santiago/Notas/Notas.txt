@@ -565,5 +565,67 @@ POO:
         
         Modificador de Acceso PRIVATE: Restringe el atributo para que solo pueda ser utilizado por metodos de la misma clase. Ninguna otra clase puede acceder a el.
 
+ENCAPSULAMIENTO: Se encarga de ocultar nuestros atributos o nuestros metodos.
+    *Encapsula los datos para uqe cualquiera no pueda cambiar los datos.
+    
+    Metodos accesores ==> Setters y Getters 
 
+        Set (Significa establecer en ingles) ==> Vamos a establecer un atributo para mi variable.
+
+        CODIGO:
+            
+            public Clase1{
+                private int edad;
+
+                public void setEdad (int edad){   //Establece la edad que manda el usuario 
+                    this.edad =edad;
+                }
+            }    
+
+            ///Otra clase
+
+            public Clase2{
+                Clase1 objeto1 = new Clase1();
+
+                objeto1.setEdad(10);   //Establece que edad valga 10
+            }
+
+        Get (Obtener) ==>Mostramos la variable
+
+        CODIGO:
+
+            public Clase1{
+                private int edad;
+
+                public void setEdad (int edad){   //Establece la edad que manda el usuario 
+                    this.edad =edad;   //Mirar el this
+                }
+
+                public int getEdad(){
+                    return edad;     //Mirar el return
+                }
+            }    
+
+            ///Otra clase
+
+            public Clase2{
+                Clase1 objeto1 = new Clase1();
+
+                objeto1.setEdad(10);   //Establece que edad valga 10
+                System.out.println("La edad es: "+ objeto1.getEdad); //Imprimo la edad (NO puedo poner + edad, sino el metodo getter)
+            }
+
+CONSTANTES: Variables que nunca cambian
+    *private final  String miCosita; 
+
+MIEMBROS ESTATICOS DE CLASE: //Toca repasar
+    Atributos:
+        *private static String frase ="Primera frase"  //Ya el atributo no le pertenece al objeto sino a la clase... por lo tanto todo cambio que yo le haga a este atributo 
+                                                        en cualquier objeto va a cambiar en la clase (cambiandole a todos los objetos).      
+        Ya no se necesita crear objetos para llamar los atributos de la clase.      
+    Metodos:
+        *public static int sumar (int n1, int n2){   //Los metodos estaticos tambien le pertenece a la clase, no a los objetos
+        }
+
+    
 */
