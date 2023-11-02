@@ -627,5 +627,5 @@ MIEMBROS ESTATICOS DE CLASE: //Toca repasar
         *public static int sumar (int n1, int n2){   //Los metodos estaticos tambien le pertenece a la clase, no a los objetos
         }
 
-    
+ESTUDIAR METODOS DE TIPO OBJETO    
 */
