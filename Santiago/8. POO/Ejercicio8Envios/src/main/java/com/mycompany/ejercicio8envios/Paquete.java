@@ -11,20 +11,16 @@ package com.mycompany.ejercicio8envios;
 public class Paquete {
     private int numeroReferencia;
     private int dni;
-    private double peso, precio;
+    private double peso,precio;
     private int prioridad;
 
-    public Paquete(int numeroReferencia, int dni, double peso) {
-        this.numeroReferencia = numeroReferencia;
-        this.dni = dni;
-        this.peso = peso;
-    }
 
     public Paquete(int numeroReferencia, int dni, double peso, int prioridad) {
         this.numeroReferencia = numeroReferencia;
         this.dni = dni;
         this.peso = peso;
         this.prioridad = prioridad;
+
     }
 
     public double getPeso() {
@@ -42,10 +38,14 @@ public class Paquete {
     public int getDni() {
         return dni;
     }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
     
     
-    
-    public 
-    
+    public String MostrarDatos (){
+        return "Paquete No. "+ numeroReferencia+"\nCC. "+dni + "\nCosto del envio: "+precio;
+    }
     
 }
