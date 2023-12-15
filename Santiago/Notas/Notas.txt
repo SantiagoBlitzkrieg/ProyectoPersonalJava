@@ -470,6 +470,7 @@ MATRICES: Es un arreglo bidimensional, que necesita dos indices para acceder a s
         }
 
 POO:
+
     *No olvidar el metodo main:
         public static void main (String [] args){
     *Variables locales ==> Estan dentro del metodo
@@ -627,5 +628,84 @@ MIEMBROS ESTATICOS DE CLASE: //Toca repasar
         *public static int sumar (int n1, int n2){   //Los metodos estaticos tambien le pertenece a la clase, no a los objetos
         }
 
-ESTUDIAR METODOS DE TIPO OBJETO    
+ESTUDIAR METODOS DE TIPO OBJETO  
+
+HERENCIA: Es una forma de reutilizacion de software
+    *Clase Padre (Super Clase)  <|====  Clase Hija (Sub Clase)
+
+        Ejemplo de heredar:
+            public class (nombre hijo) *extends* (nombre Padre){
+                private int codigoEstu;
+                private float notaFinal;
+
+                public Estudiante (String nombre, String apellido, float codigoEstu, float notaFinal){    //pongo los atributos de la clase padre y los propios
+
+                    super(nombre,apellido); //inicializa lo que ya está inicializado en la clase padre
+                    this.codigoEstu = codigoEstu;
+                    this.notaFinal = notaFinal;
+                }            
+
+                *Los datos privados de la clase padre no pueden accederse desde la clase hija (los protected si permiten esto)
+                
+            }
+
+Clases y Métodos Finales: Si le pongo final a una clase, esta no puede ser heredada... no puede tener "hijos"
+                          Si le pongo un final a un método, no puede existir el mismo método en la clase que lo hereda.
+                          Suele usarse para temas de seguridad.
+
+
+Sobre Escritura de Miembros: NO es lo mismo que Sobrecarga de metodos (Los cualees están en la misma clase)
+    Es cuando el mismo metodo está en distintas clases por la herencia, pero cada uno está especializado (Como comer para personas, perros y vacas.... Todos hijos de la clase animal que tiene comer un metodo comer :D)
+
+    Toca poner la palabra @Override que significa sobreescribir
+
+
+Clases y metodos abstractos: Una clase abstracta solo se usa como super clase y no se puede instanciar.
+    Sirve para proporcionar una super clase apropiada a partir de la cuál heredan otras clases 
+    Los metodos abstractos solo pueden ser implementados en clases abstractas
+    Las clases que heredan de las clases abstractas están obligadas a sobreescribir los metodos abstractos de la clase padre.   (Usando el Override)    
+
+Polimorfismo: La clase padre es compatible con los tipos detras de ella... pero no alreves
+    Poli= "muchos"  ---- Morfismo= "formas"
+    *Puedo instanciar un objeto de tipo clase Padre, asociandolo a la clase hija:
+    Ejm:
+        Vehiculo <|=== VehiculoTurismo
+
+        Vehiculo miVehiculo = new Vehiculo ("12GB","Ferrari")
+            referencia               instanciacion
+
+        //Tambien puedo hacer esto
+
+        Vehiculo miVehiculo2 = new VehiculoTurismo ("12GB","Ferrari","Rojo") //Otra forma que puede tomar un objeto. 
+    *Se suele usar para cuando uno tiene un arreglo de objetos:
+        Vehiculo misVehiculos []= new Vehiculo [4];
+
+    **Conversion Ascendente de Tipos (Upcasting): Convertir un objeto de la subclase en un objeto de la superclase.
+
+        
+        Ejm:
+
+            VehiculoTurismo miVehiculo = new VehiculoTurismo (4,"jv5","Ferrari")
+
+            Vehiculo vehiculo = miVehiculo;
+
+            System.out.println(vehiculo);  //Se imprime el objeto de la subclase aunque vehiculo sea de la superclase.
+
+
+            //Seria lo mismo a escribirlo como en el polimorfismo así:
+
+            Vehiculo vehiculo = new VehiculoTurismo (4,"jv5","Ferrari");
+            System.out.println (vehiculo);
+
+    **Conversion Descendiente de Tipos (DownCasting): Convertir un objeto de la clase padre en algun objeto de sus subclases (Necesita de un upcasting previo)
+
+        Ejm:
+
+            Vehiculo vehiculo = new VehiculoTurismo (4,"jv5","Ferrari");
+
+            VehiculoTurismo nuevoVehiculo = (VehivuloTurismo) vehiculo ;
+
+            System.out.println (nuevoVehiculo)   //Se imprime un objeto tipo vehiculoTransporte.
+
+
 */
