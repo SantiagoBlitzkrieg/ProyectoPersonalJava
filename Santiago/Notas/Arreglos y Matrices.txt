@@ -1,0 +1,269 @@
+ARRAYS (arreglos, vectores): Es una estructura de datos que nos permite almacenar un conjunto de datosde un mismo tipo.
+*Posiciones contiguas de memoria.
+*El tamaño de los arrays se declara en un primer momento y no puede cambiar luego durante la ejecucion del programa.
+
+    Arrays Unidimencionales:
+        Tipo_de_variable[] Nombre_del_array = new Tipo_de_variable[dimension];
+        Ejemplo:
+            int[] edad = new int[4];
+            char[] sexo = new char[2];
+    Dar valores:
+        En caso de que queramos inicializarlos con valores propios, haremos esto:
+            int[] numeros = new int[3]; //Array con 3 espacios
+            // existen 2 formas:
+                1. numeros[0]=5; //pone un 5 en el primer espacio del arreglo
+                   numerso[1]=3; //pone un 3 en el segundo espacio del arreglo
+                   numeros[2]=2;         
+                2. int[] numeros = {5,7,9}; //Define los arreglos                        
+    Leer el array:
+        for (int i = 0; i<3;i++){
+            System.out.println(numeros[i]); //Se imprime 5, 3 y 2
+        }
+    Llenar un arreglo:
+        for (int i=0; i<nElementos;i++){
+            System.out.print("");
+            letras [i] = entrada.next().charAt(0);  //Se va llenando el array
+        }
+    
+    FOR EACH (Otra manera de imprimir un arreglo de manera más eficaz y rapida):
+        String [] nombres = {"Alejandro", "Juan", "Santiago"};
+
+        for (int i=0;i<6;i++){  // Seria la forma de for, en donde conozco el numero de elementos que tiene el arreglo
+            System.out.println(nombres[i]);
+        }
+
+        for (int i=0;nombres.length;i++){   //Con el length puedo desconocer el numero de datos del array... Eso lo hace por mi
+            System.out.println(nombres[i]);
+        }
+
+        //AHORA SI, EL BUCLE FOR MEJORADO
+
+        for (String i:nombres){  //Este es el for each, dice que dentro del interador i se vana a copiar todos los nombres que hay en el arreglo
+            System.out.println(i);
+        } //Para que pueda funcionar primero debo tener elementos en mi array SIEMPRE.
+
+METODOS DE ORDENAMIENTO: (Ordenar los elementos de un arreglo):
+
+    Metodo Burbuja (Es el algoritmo de ordenamiento mas sencillo, pero no el mas eficiente):
+    *Funciona revisando cada elemento de la lista que va a ser ordenada con el siguiente, intercambiandolos de posicion si estan en un orden equivocado.
+    *Va uno por uno... tal como me explico Nicolas
+    *Los numeros más pequeños son los que van a subir a la superficie... como burbujas 
+    
+        //Ej: Si numeroActual> numeroSiguiente ==> cambio 
+            45213 - 4 no es mayor a 5 pero 5 si es mayor a 2...
+            42513 - 5 es mayor a 1
+            42153 - 5 es mayor a 3
+            42135 - 4 es mayor a 2 
+            24135 - 4 es mayor a 2.. y a 3
+            21345 - 2 es mayor a 1
+            12345 - 2 no es mayor a 3 ni 3 es mayor a 4 ni 4 es mayor a 5... YA ESTA ORDENADO.
+    
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int aux;
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Metodo burbuja
+            for (int i=0; i<(nElementos-1);i++){ //Se pone ese nElementos-1 porque no es necesario que el programa recorra todos los espacios del arreglo
+                for (int j=0; j<(nElementos-1);j++){
+                    if(arreglo[j]> arreglo[j+1]){ //Si numeroActual> numeroSiguiente
+                        aux = arreglo[j];
+                        arreglo[j] = arreglo [j+1];
+                        arreglo [j+1] = aux;
+                    }
+                }
+            }
+            // Si lo quiero de forma decreciente solo falta imprimir el arreglo de atras para adelante jajaja.
+
+    Ordenamiento por Insercion: (Requiere O(n^2) operaciones para ordenar una lista de n elementos):
+        ejm:53412 (Hay una flecha que está "observando" el 5)
+            53412 (En la izquierda de 5 hay un numero mayor a este? No... porque ni hay numero) 
+                 (La flechita pasa al 3. Hay un numero mayor a su izquierda? SI ==> CAMBIO )
+            35412 (El numero a la izquieda es mayor que 3? No... porque no existe)
+                 (La flechita cambia al 4)
+            ...
+            34512 (La flechita esta en 1... la izquierda de 1 es mayor a este? Si ==> CAMBIO) 
+            34152 (La izquierda de 1 siqgue siendo mayor ==>CAMBIO)
+            ...
+            13452 .... Y así 
+
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int pos;
+            int aux
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Ordenamiento por Insercion 
+            for (int i=0; i<nElementos; i++){
+                pos = i;
+                aux = arreglo[i];
+
+                while((pos>0) && (arreglo [pos-1]>aux)){
+                    arreglo [pos] = arreglo [pos-1];
+                    pos--;
+                }
+                arreglo [pos] = aux;
+            }
+
+    Ordenamiento por Seleccion:
+        1. Buscar el minimo elemento de la lista.
+        2. Intercambiar con el primer elemento.
+        3. Buscar el minimo del resto de la lista.
+        4. Intercambiarlo con el segundo.
+        5. Seguir asi.
+
+        AHORA EN CODIGO:
+
+            Scanner entrada = new Scanner(Systema.in);
+            int arreglo[];
+            int nElementos;
+            int aux;
+            int min;
+
+            nElementos = Integer.parseInt(joptionpane.showInputDialog("Digite la cantidad del arreglo"));
+
+            arreglo= new int [nElementos];
+
+            for (int i=0; i<nElementos; i++){
+                System.out.println((i+1)+". Digite un numero: ");
+                arreglo[i]=entrada.nextInt();
+
+            }
+
+            //Ordenamiento por Seleccion 
+            for (int i=0; i<nElementos; i++){
+                min = i;
+                for (int j=i+1;j<nElementos; j++){
+                    if (arreglo [j] < arreglo [min]){
+                        min=j;
+                    }
+                }
+                aux = arreglo[i];
+                arreglo[i] = arreglo[min];
+                arreglo[min]=aux;
+            }
+
+    Busquedas: 
+        Busqueda Secuencial: (Buscar un determinado elemento en un array):
+        *Algoritmo sencillo, no importa si está ordenado o no el array ya que va a buscar todas las posiciones del arreglo
+        *No es muy eficiente
+
+        CODIGO:
+            int arreglo[]= {4,1,5,2,3};
+            int dato;
+            booleam band =false;
+
+            dato= Integer.ParseInt (JOptionePane. showInputDialog("Digite el numero que quiere buscar"));
+
+            //Busqueda Secuencial:
+            int i =0;
+
+            while(i<5 && band ==false){
+                if (dato==arreglo[i]){
+                    band = true;
+                }
+                i++
+            }
+            
+            if (bandera==false){
+                JOptionpage.showMessageDialog(null, "El numero no se encuentra en el arreglo");
+            }else{
+                JOptionePane.showMessageDialog(null, "El numero ha sido encontrado en la posicion "+ (i-1));
+            }
+
+        Busqueda Binaria:
+        *Se utiliza cuando el arreglo está ordenado de forma ascendente
+            CODIGO:
+                int arreglo [] = {1,2,3,4,5}; //Esta en forma ascendente
+                int dato, inf, sup, mitad, i=0; 
+                boolean band =f alse;
+
+            dato= Integer.ParseInt (JOptionePane. showInputDialog("Digite el numero que quiere buscar"));
+
+            //Busqueda Secuencial:
+            inf = 0;
+            sup = 5;
+            i = 0;
+
+            mitad = (inf+sup)/2;
+
+            while(inf<=sup && i<5){
+                if (arreglo[mitad]==dato){
+                    band =true;
+                    break;
+                }
+                if (arreglo[mitad > dato]){
+                    sup =mitad;
+                    mitad =(inf+sup)/2
+                }
+                if (arreglo[mitad < dato]){
+                    inf = mitad;
+                    mitad =(inf+sup)/2
+                }
+                i++;
+            }
+
+            if (bandera==false){
+                JOptionpage.showMessageDialog(null, "El numero no se encuentra en el arreglo");
+            }else{
+                JOptionePane.showMessageDialog(null, "El numero ha sido encontrado en la posicion "+ mitad);
+            }
+
+MATRICES: Es un arreglo bidimensional, que necesita dos indices para acceder a sus elementos.
+*Algebra lineal ==> Tabla de n filas y m columnas cuyos elementos son todos del MISMO TIPO
+*Es un "ARRAY DE ARRAYs... O arreglo de arreglos"
+
+    CODIGO:
+        
+        // int matriz [][]={{1,2,3};{4,5,6};{7,8,9}}  //Esto seria una matriz de 3*3
+
+        int matriz [][];
+        int nFilas;
+        int nColumnas;
+        Scanner entrada= new Scanner (System.in);
+
+        nFilas= Integer.parseInt(JOptionePane,showInputDialog("Digite el numero de filas del arreglo));
+        nColumnas= Integer.parseInt(JOptionePane,showInputDialog("Digite el numero de filas del arreglo));  
+
+        matriz = new int [nFilas][nColumnas];
+
+        for (int i=0;i<nFilas;i++){   
+            for (int j=0;j<3;j++){    
+                System.out.print(matriz["+i+"]["+j+"]: ");
+                matriz[i][j] = entrada.NextInt();          
+            } 
+
+            
+        }
+
+        System.out.println ("La matriz es: ")
+        for (int i=0;i<nFilas;i++){   //numero de filas
+            for (int j=0;j<nColumnas;j++){   //numero de columnas  
+                System.out.print(matriz[i][j]);
+            }   
+            System.out.println("");
+        }

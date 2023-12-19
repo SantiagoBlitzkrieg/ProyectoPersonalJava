@@ -8,6 +8,37 @@ package com.mycompany.ejercicio10futbol;
  *
  * @author gomez
  */
-public class Futbolista {
+public class Futbolista extends Persona{
+    private String posicion;
+    private int dorsal;
+
+    public Futbolista(String posicion, int dorsal, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.posicion = posicion;
+        this.dorsal = dorsal;
+    }
+       
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public int getDorsal() {
+        return dorsal;
+    }
+    
+    public void entrevistas(){
+        System.out.println("El jugador dio una magnifica entrevista");
+    }
+    
+    @Override
+    public void entrenamiento(){
+        System.out.println("Entrena");
+    }
+    
+    @Override
+    public void partido (){
+        System.out.println("Juega el partido de Futbol");
+    }
     
 }

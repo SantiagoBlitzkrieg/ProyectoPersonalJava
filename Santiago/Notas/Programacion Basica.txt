@@ -1,0 +1,199 @@
+Historia:
+Creado por Sun Microsystems Inc. en el año 1995.
+Fue creado por un grupo de trabajo liderado por James Gosling
+
+Java es un lenguaje de desarrollo de poróposito general, siendo válido para realizar 
+todo tipo de aplicaciones profesionales.
+
+¿Qué lo hace distinto?
+Los programas creados por Java son INDEPENDIENTES de la arquitectura (windows, mac)
+Permite escribir Applets.
+APPS INTRARREDES; CLIENTE/SERVIDOR
+
+Se pueden programar Aplicaciones Independientes y applets
+
+Applets (pequeños programas en html).
+
+
+Es intrínsecamente Orientado a Objetos.
+Tiene gran funcionalidad gracias a sus librerías
+No tiene punteros manejables por el programador.
+El manejo de memoria lo gestiona el propio lenguaje.
+Genera aplicaciones con pocos errores posibles (riguroso)
+Incorpora Multi- Threading (hilos)
+
+VARIABLES:
+
+TIPOS DE VARIABLES PRIMITIVAS EN JAVA:
+    *Variable es un espacio de memoria donde asignas un valor:
+    *No se puede poner null en primitivos
+    ENTEROS:
+
+        byte (ocupa 8 bits) va de -128 a 127 
+        short (ocupa 16 bits) va de  -32.768 a 32.767
+        int (ocupa 32) *Más utilizado* 
+        long (64 bits)
+
+    REALES:
+        float (ocupa 32 beats) ##f; el f indica que es float
+        double (ocupa 64 beats) NO necesita letra
+
+    Caracteres:
+        char 'simples'  ///// Recordar ejemplo hola = h  
+                // metodos: Character.toUpperCase(caracter) //CONVIERTE EL CARACTER EN MAYUSCULAS
+    
+    DESICIÓN:
+        boolean (true false)
+
+TIPOS DE VARIABLES  NO PRIMITIVAS EN JAVA:
+    *LOS DATOS NO PRIMITIVOS TIENE MÉTODOS, LOS PRIMITIVOS NO
+    CADENAS:
+        String palabra = "hola gononea"; // la palabra tiene metodos
+
+            
+
+
+CONSTANTES:
+*Espacio de memoria que no va a cambiar NUNCA
+
+    final int numero = 10; //constante SOLO ES PONER final
+
+
+ENTRADA Y SALIDA DE DATOS:
+    Consola: Scanner
+    Sin consola: JOptionPane
+
+OPERADORES ARITMÉTICOS:
+    Residuo: num1  %  num2 
+    Combinados:
+        numero += 5  // le sumo 5 a la variable numero ===> numero = numero+5
+        numero -= 5 // lo mismo en resta
+        numero *= 5
+        numero /= 5
+        numero %=5
+    Incremento: 
+        x++ // es igual a x +1
+        x-- // le resto 1
+
+            EJEMPLO:
+            int x=5;
+            int y;
+
+            y=x++;  // Si pongo ++x primero se suma 1 a x y luego y=x... por lo que y=6
+
+            System.out.println(y); //da 5, primero se asigna y=x y despues se realiza la opción de x++
+            System.out.println(x); // da 6
+
+MATH:
+
+    double raiz = Math.sqrt(9); // Raiz cuadrada
+    int raiz2 = (int)Math.sqrt(9); //convertimos el double del sqrt a entero
+    double base =5, exponente= 2;
+    double respuesta = Math.pow(base, exponente); //exponencial
+    double numero = 4.56;
+    long redondea = Math.round(numero); //Sale 5, redondeo 4.56
+    double numerorandom =Math.random();//random
+
+
+
+CONDICIONALES:
+    if/else:    //Condicionales Simples y dobles
+        if(condicion){         //Para hacer un if compuesto de dos o mas condiciones debo colocar el &&
+                               //Para hacer el operador "o" pongo  ||            
+            instruccion1;
+        }
+        else{
+            instruccion2;
+        }
+
+        ejemplo: 
+        int numero, dato= 5;
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero :"));  //convierto String en int
+
+        if(numero == dato){    // == es que si el numero es IGUAL a dato
+                               // != es que si el nuemro es DIFERENTE a dato 
+                               // <= menor o igual que; >= mayor o igual que; 
+            joptionpage.showMessageDialog(null,"El numero es 5");
+        }
+            else{
+                JOptionPane.showMessageDialog(null, "El numero es diferente de 5");
+        }
+
+    switch: //Condicionales multiples
+        switch(dato){
+            case 1:Instrucciones1;
+            break;
+            case 2: Instrucciones;
+            break;
+            ...
+            case n: Instrucciones n;
+            break;
+            default: CasoContrario;
+            break;
+        }
+
+        EJEMPLO:
+        int dato;
+        dato0Integer.parseInt(JOptionPane.showMessageDialog("Digite un numero entre 1 y 3"));
+
+        switch(dato){
+            case 1: JOptionPane.showMessageDialog(null, "Es el numero 1");
+                break; //cierra el código y la condicion, si no lo pongo, no sale de la sentencia switch hasta que encuentre un break
+            case 2: JOptionPane.showMessageDialog(null, "Es el numero 2");
+                break;
+            case 3: JOptionPane.showMessageDialog(null, "Es el numero 3");
+                break;
+            default: JOptionPane.showMessageDialog(null, "El numero no está dentro del rango de 1 a 3");
+
+        } 
+
+    Operador Ternario:   //Forma inusual pero interesante
+        valor = (Condicion) ? valor 1 : valor 2
+        String mensaje;
+        EJEMPLO:
+        numero= Integer.parseInt(JOptionPane.showInputDialog("Digite un numero: "));       
+
+        mensaje = (numero %2==0)? " Es par": "Es impar"; // *Numero dividido en dos tiene que dar de reciduo 0 ==>  SI ES PAR EL STRING "Es par" se guarda en mensaje.... si no se guarda el "Es impar"
+
+        JOptionPane.showMessageDialog(null, mensaje);
+
+CICLOS O BUCLES: 
+
+    Ciclo While (mientras): //PRIMERO LA CONDICION DEBE CUMPLIRSE PARA CORRER EL BUCLE WHILE.
+        while (condicion){     //MIENTRAS se cumplan las condiciones se va a repetir las intrucciones.
+            instrucciones;
+        }
+
+        EJEMPLO:
+        
+        int i = 1;
+        int contador;
+        while (i<=10){
+            System.out.println(i); // va a hacer 1, 2, 3, 4, ..., 10.
+            i++    // avanza de 1 en 1... si quiero restar seria i--
+        }
+
+    Ciclo Do While:  //PRIMERO EJECUTA LAS INSTRUCCIONES Y DESPUES REVISA SI LA CONDICION SE CUMPLE
+        do{
+            Instrucciones;
+        }while(condicion);
+
+        EJEMPLO:
+
+        int i = 111;
+
+        do{
+            System.out.println(i) // Primero imprime 11
+            i++
+        }while (i>=10);  //Luego ve que no se cumple la instruccion y no sigue el bucle.
+
+    Ciclo For
+        for (inicializacion; condicion; aumento o decremento){
+            Instrucciones;
+        }
+
+        EJEMPLO:
+        for(int i=1; i<=10; i++){     //no necesita un int i por fuera del bucle
+            System.out.prinln(i); //Se imprime 1, 2, 3, ..., 10
+            
+        }       

@@ -8,6 +8,29 @@ package com.mycompany.ejercicio10futbol;
  *
  * @author gomez
  */
-public class Entrenador {
+public class Entrenador extends Persona{
+    private String estrategia;
+
+    public Entrenador(String estrategia, String nombre, String apellido, int edad) {
+        super(nombre, apellido, edad);
+        this.estrategia = estrategia;
+    }
+
+    public String getEstrategia() {
+        return estrategia;
+    }
+    
+    public void planificarEntrenamiento(){
+        System.out.println("Planifica entrenamiento");
+    }
+    @Override
+    public void entrenamiento(){
+        System.out.println("Dirige un entrenamiento");
+    }
+    
+    @Override
+    public void partido (){
+        System.out.println("Dirige un partido de futbol");
+    }
     
 }
