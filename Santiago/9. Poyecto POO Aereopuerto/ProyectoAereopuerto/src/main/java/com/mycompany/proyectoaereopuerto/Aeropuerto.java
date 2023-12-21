@@ -1,21 +1,25 @@
 package com.mycompany.proyectoaereopuerto;
 
-public class Aereopuertos {
+public class Aeropuerto {
+    
     private String nombreAereo;
     private String ciudad;
     private String pais;
-    private int numCompanias=0;
-    private Companias companias[];
+    private int numCompanias;
+    private Companias companias[]= new Companias[10];
     
-    public Aereopuertos(String nombreAereo, String ciudad, String pais) {
+    public Aeropuerto(String nombreAereo, String ciudad, String pais) {
         this.nombreAereo = nombreAereo;
         this.ciudad = ciudad;
         this.pais = pais;
+        numCompanias=0;
     }
-    public Aereopuertos(String nombreAereo, String ciudad, String pais, Companias n) {
+    public Aeropuerto(String nombreAereo, String ciudad, String pais, Companias n[]) {
         this.nombreAereo = nombreAereo;
         this.ciudad = ciudad;
         this.pais = pais;
+        companias = n;
+        numCompanias=n.length;
     }
     
     public void meterCompanias(Companias c){
@@ -48,7 +52,7 @@ public class Aereopuertos {
         int i=0;
         Companias com= null;
         
-        while (encontrado==false && i<companias.length){
+        while ((!encontrado) && i<companias.length){   //Fijarse que ese !encontrado ==> encontrado == false
             if (nombre.equals(companias[i].getNombre())){
                 encontrado = true;
                 com = companias[i];
@@ -59,3 +63,5 @@ public class Aereopuertos {
     }
     
 }
+
+
