@@ -1,21 +1,21 @@
 package com.mycompany.proyectoaereopuerto;
 
 public class Vuelos {
-    private int id;
+    private String id;
     private String ciudadOrigen;
     private String ciudadDestino;
     private Double  precio;
     private int maxPasajeros;
     private int realPasajeros;
-    private Pasajeros listaPasajeros [] =new Pasajeros[maxPasajeros];
-    public Vuelos(int id, String ciudadOrigen, String ciudadDestino, Double precio, int maxPasajeros) {
+    private Pasajeros listaPasajeros [];
+    public Vuelos(String id, String ciudadOrigen, String ciudadDestino, Double precio, int maxPasajeros) {
         this.id = id;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.precio = precio;
         this.maxPasajeros = maxPasajeros;
         this.realPasajeros = 0;
-        //this.listaPasajeros = new Pasajero [MaxPasajeros];
+        this.listaPasajeros = new Pasajeros [maxPasajeros];
     }
     
     public void añadirPasajero(String nombre, String pasaporte, String nacionalidad){
@@ -27,7 +27,7 @@ public class Vuelos {
         }
     }    
     
-    public int getId() {
+    public String getId() {
         return id;
     }
 

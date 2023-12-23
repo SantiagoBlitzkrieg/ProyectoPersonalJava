@@ -3,7 +3,7 @@
 public class Companias {
     private String nombre;
     private int numVuelos=0;  
-    private Vuelos vuelo[]= new Vuelos [numVuelos];
+    private Vuelos vuelo[]= new Vuelos [10];
 
     public Companias(String nombre) {
         this.nombre = nombre;

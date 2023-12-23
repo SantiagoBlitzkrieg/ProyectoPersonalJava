@@ -236,8 +236,18 @@ Polimorfismo: La clase padre es compatible con los tipos detras de ella... pero 
 
             System.out.println (nuevoVehiculo)   //Se imprime un objeto tipo vehiculoTransporte.
 
+        Ejm: 
+
+            Entrenador entrenador1 = (Entrenador) entrenador;
+            entrenador1.planificarEntrenamiento();
+
+            //////ES LO MISMO QUE\\\\\\
+
+            ((Entrenador) entrenador1).planificarEntrenamiento();
+
 Arreglos Dinámicos:
     static ArrayList <Clase> nombre = new ArrayList<clase>;   //El arrayList es un arreglo dinámico, no toca indicar cuantos elementos debe tener
+    *para insertar ==> nombre.add(objeto);
 
 Herencia Multiple: Hace referencia a la caracteristica de los lenguajes de programacion orientados a objetos en la que una clase puede heredar atributos y metodos de mas de una superclase.
         *Una clase tiene mas de una superclase (No se puede hacer en java directamente)
@@ -250,3 +260,4 @@ Interfaces: (Hay un ejemplo en netBeans) Simula la herencia multiple en Java.
             
 
             **Se recomienda usar cuando uno es experto en el tema y se quiere unir dos clases que no esten relacionadas directamente pero que tengan metodos parecidos.
+**Instaceof "Consultar"
