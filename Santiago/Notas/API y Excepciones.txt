@@ -1,0 +1,32 @@
+API: Es una interfaz de programación de aplicaciones 
+    *Es un conjunto de herramientas para desarrollar aplicaciones.
+    *La API de Java provee un conjunto de clases utilitarias para efectuar todo clase de tareas en un programa.
+    *Metodos establecidos
+    *La API de Java esta prganizada en paquetes lógicos.
+    *Consultar en la pagina oficial de Java
+    *java.lang es un paquete que ya viene integrado... es el paquete por defecto 
+
+TRATAMIENTO DE EXCEPCIONES: 
+    Excepciones: Cuando un programa en Java produce un error, la maquina virtual Java
+                comunica este hecho al programa mediante una excepcion:
+                *Sintaticamente puede estar correcto, pero semanticamente no
+                
+        Ejemplos tipos de errores: 
+            *Desbordamiento de memoria
+            *Dividir por 0
+            *Acceder a un vector fuera de sus limites.
+
+    *En la pagina de java se puede buscar la naturaleza del error
+    *El programa "se queda" al encontrar una excepcion.
+
+    Jerarquia de Excepciones:
+        Throwable (Deriva de la clase object):
+            Error (Deriva de Throwable): Estos objetos son fallas del hardware.
+            Exception (Deriva de Throwable):
+                IOException (Excepciones Verificadas): No dependen del programador pero se pueden solucionar....
+                                                       *Ejm... Que me borre una ruta que el programa necesita 
+               
+                RunTimeException (Excepciones No Verificadas): Errores de los programadores
+                                                
+
+

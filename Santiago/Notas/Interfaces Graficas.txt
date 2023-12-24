@@ -1,0 +1,43 @@
+**APOYARSE DE LA PAGINA DE JAVA DE LAS API**
+
+
+Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas y crear objetos dentro de ellas
+ 
+    //Clase Ventana
+
+    import javax.swing.JFrame; //Se importa el API
+
+    public class Ventana extends JFrame{
+        public Ventana(){ //Constructor
+            (this. *opcional)setSize(ancho,largo); //Se establece el tamaño de la ventana
+            
+            setTitle("Escribir el titulo"); //Pone el titulo de la ventana 
+            //setLocation(x,y);  //Define el lugar de la pantalla en el que va a estar la esquina superior izquierda de nuestra ventana
+            //setBounds(x,y,ancho,largo) //Hace eñ setSize y el setLocation
+
+            setLocationRelativeTo(null);  //Aparece la ventana en el centro de la pantalla
+
+
+            setDefaultCloseOperation(EXIT_ON_CLOSE); //Este metodo si hace que al cerrar la ventana el programa finalice 
+
+        }
+    }
+
+    //Clase main
+
+    public class Principal{
+        public static void main(String[] args) {
+            Ventana v1 = new ventana();  //Se crea la ventana, pero esta es invisible
+
+            v1.setVisible(true); //Hacemos visible la ventana
+                                // *cierro la ventana el programa se sigue ejecutando... recordar Poo
+
+            
+
+        
+        
+        
+        
+        
+        }
+    }
