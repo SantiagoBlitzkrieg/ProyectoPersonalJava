@@ -18,7 +18,7 @@ Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas 
             setLocationRelativeTo(null);  //Aparece la ventana en el centro de la pantalla
 
             //setResizable(False); //Restringe cambiar el tamaño de la ventana (Por default esta en true y lo permite)
-            setMinimunSite(new Dimension(ancho,alto)); //Restringe el tamaño minimo al cual la ventana puede redireccionarse
+            setMinimunSize(new Dimension(ancho,alto)); //Restringe el tamaño minimo al cual la ventana puede redireccionarse
 
             //this.getContentPane().setBackground(Color.BLACK); //Se obtiene el contenido de la ventana y se cambia su color a uno negro
 
@@ -28,26 +28,40 @@ Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas 
 
         }
 
-        //JPanel:
         private void iniciarComponentes(){
+            colocarPaneles();
+            //colocarEtiquetas();
+
+        }
+
+
+        private void colocarPaneles(){
+
+            //////JPanel:
+
             // ****Panel: (Hoja sobre la mesa) Se pone sobre la ventana, y sobre ellos se pone todo lo que queramos ==> contenedor de componentes graficos****
             // ****Son utiles para organizar la ventana
 
 
-            JPanel panel = new JPanel(); //Creacion de un panel
+            //JPanel panel = new JPanel(); //Creacion de un panel
             //panel.setBackground(Color.RED);  //Coloco color al Panel (NO a la ventana)
 
             panel.setLayout(null); //Desactivamos el diseño del panel (Layout) para que funcione el metodo etiqueta.setBound;
             this.(sobre el JFrame)getContentPane().add(panel); //Agregamos el panel a la ventana (Aun así es invisible)
+        }
 
 
-            //JLabel
+        private void colocarEtiquetas(){
 
-            //Jlabel etiqueta = new JLabel(); //Creamos una etiqueta
+                        //JLabel
+
+            /////  Etiqueta 1 ==> Etiqueta tipo texto
+
+            //JLabel etiqueta = new JLabel(); //Creamos una etiqueta
             //etiqueta.setText("Hola"); //Establecemos el texto de la etiqueta... Tambien se podia hacer desde el constructor
             //etiqueta.setHorizontalAlignment (SwingConstants.CENTER) //Otra forma de establecer la alineacion orizontal del texto
             
-            Jlabel etiqueta = new JLabel("Hola", SwingConstants.CENTER); //Creamos una etiqueta que tenga texto y que defina su posicion horizontal
+            JLabel etiqueta = new JLabel("Hola", SwingConstants.CENTER); //Creamos una etiqueta que tenga texto y que defina su posicion horizontal
             
             etiqueta.setBound(x,y,ancho,altura); //Ya se uso este metodo... Sirve si usamos primero el panel.setLayout
 
@@ -60,9 +74,62 @@ Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas 
             panel.add(etiqueta); //Agregamos la etiqueta al panel (Apareceria arriba en el centro del panel)
 
 
+            /////Etiqueta 2 ==> Etiqueta tipo imagen
 
 
+            ///FORMAS DE CREAR LA ETIQUETA:
+
+            ///ImagenIcon imagen = new ImageIcon (NOMBRE ARCHIVO);
+            ///JLabel etiqueta2 = new JLabel(imagen);
+
+            ///JLabel etiqueta2 = new JLabel();
+            ///etiqueta2.setIcon(new ImageIcon("nombre archivo"));
+            
+            ///JLabel etiqueta2 = new JLabel(new ImageIcon("Nombre del archivo de imagen (Este debe estar en el mismo documento del proyecto)"));  //Creo una etiqueta con imagen usando el constructor
+
+
+
+            //etiqueta2.setBounds(x, y, ancho, alto);  //Tomar en cuenta que esto define el tamaño de la etiqueta pero NO de la imagen
+            
+            ImageIcon imagen = new ImageIcon("balonMundial.jpg);
+            Jlabel etiqueta2 = new JLabel();
+            etiqueta2.setBounds(10,80,300,300);
+            etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth (ancho), etiqueta2.getHeigth (alto), Image.SCALE_SMOOTH (forma de escalado))));  //Aqui estpy cambiando el tamaño de la imagen
+
+            panel.add(etiqueta2);
         }
+
+        private void colocarBotones(){
+
+            //Boton 1 ==> boton texto
+
+            JButton boton1 = new JButton("Nombre");   //Tambien existe el metodo ***setText*** para establecer un texto al boton
+            boton1.setBounds(x,y,ancho, alto);  //RECORDAR setBounds para ubicar el boton
+            boton1.setEnabled(true); //significa si se puede o no tener interaccion con el boton (LO HABILITA Y DESHABILITA)
+            boton1.setMnemonic("a") //ALT + a (letra) sucede como si se diera click al boton.. interesante
+            boton1.setForeground(Color.BLUE);  //Color letra
+            boton1.setFont(new Font ("arial", Font.BOLD, 20)) //Establecemos la fuente de la letra del boton
+            panel.add (boton1);
+
+            //Boton 2 ==> boton imagen
+
+            JButton boton2 = new JButton();  //Si pongo la imagen en el constructor esta sale en su tamaño natural 
+            boton2.setBounds(100, 200, 100, 40);
+            //boton.setOpaque (true); //Se puede cambiar el color de fondo (No es necesario en algunas versiones de JAVA)
+            ImageIcon clicAqui = new ImageIcon ("nombre de la Imagen");
+            boton2.setIcon(new ImageIcon (clicAqui.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeigth(), Image.SCALE_SMOOTH)));
+            //boton2.setBackground(Color.BLUE);
+
+            panel.add(boton2);
+
+            //Boton 3 ==> boton de bordes
+            JButton boton3 = new JButton();
+            boton3.setBounds(100, 300, 110, 50);
+            boton3.setBorder(BordeFactory.createLineBorder(Color.BLUE, 4(ancho), true (Borde redondeado)));  // Se debe colocar un LideBorder que hereda de Border (Border es una interface)
+            
+            panel.add(boton3);
+        }
+
 
 
     }
@@ -77,3 +144,70 @@ Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas 
  
         }
     }
+
+
+
+
+    /////EVENTOS\\\\\{   //Hacer que algo suceda al oprimir un boton
+
+        *OYENTE DE ACCION:   //metodo que en cuanto suceda algo con el boton pase algo
+            
+            ActionListener oyenteAccion = new ActionListener(){  //El actionListener es una interfaz... hay que poner todos sus metodos abstractos
+                
+                @Override
+                public void  actionPerformed(ActionEvent ae){  //Aqui se pone la accion que quiero que suceda
+                    etiqueta.setText("Hola "+ cajaTexto.getText());
+                }
+            }  
+            
+
+            
+            boton.addActionListener(oyenteAccion);
+
+        *OYENTE DE RATON:  //añadir oyente de raton ==> eventos del mouse
+
+            //Agregando oyente de raton
+            MouseListener oyenteRaton = new MouseListener(){
+
+                @Override
+                public void MouseClicked (MouseEvent me){  //Click y soltar sobre el boton (presionar y soltar)
+
+                }
+                
+                @Override
+                public void MousePressed (MouseEvent me){ //Solo Click sobre el boton (Pulsar)
+                    
+                }
+                
+                @Override
+                public void MouseReleased (MouseEvent me){ //Parecido al mouse Clicked, con la diferencia de que no importa si se suelta por fuera del boton, se va a ejecutar el evento
+                    
+                }
+                
+                @Override
+                public void MouseEntered (MouseEvent me){ //Solo metiendo el cursor del mouse sobre el boton (No se necesita ni pulsar)
+                    
+                }
+                
+                @Override
+                public void MouseExited (MouseEvent me){ //Solo sacando el cursor del boton 
+                    
+                }
+            }
+
+            boton.addMouseListener(oyenteRaton);
+
+
+            //METODOS DE LOS EVENTOS DEL RATON:
+                me.isAltDown(); //verifica que mientras ocurre el evento del raton tambien esta presionada la tecla Alt
+                me.isControlDown(); //verifica que mientras ocurre el evento del raton tambien esta presionada la tecla Ctrl
+                me.isShiftDown(); //verifica que mientras ocurre el evento del raton tambien esta presionada la tecla Shift
+                me.isMetaDown(); //clickDerecho
+                megetClickCount(); //Cantidad de clicks dados (Sirve para usarlo con un if ==2 para verificar un dobleclick :D)
+    
+    
+            //EVENTO MOVIMIENTO RATON:(En el netBeans)
+
+    
+    }
+
