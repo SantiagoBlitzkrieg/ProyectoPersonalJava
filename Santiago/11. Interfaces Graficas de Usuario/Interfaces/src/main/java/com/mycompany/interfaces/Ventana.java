@@ -64,12 +64,12 @@ public class Ventana extends JFrame{
 
     private void iniciarComponentes(){
         colocarPaneles();   //SIEMPRE USAR  
-        colocarAreasTexto(); 
         //colocarEtiquetas();
         //colocarBotones();
         //colocarRadioBotones();
         //colocarBotonesActivacion();
         colocarCajasTexto();
+        colocarAreasTexto(); 
 
         //colocarCasillasVerificacion();
         //colocarListasDesplegables();
@@ -94,7 +94,6 @@ public class Ventana extends JFrame{
     
         //eventoMovimientoRaton();
         //eventoRuedaMouse();
-        eventoTeclado();
     }
 
     private void colocarEtiquetas(){
@@ -222,19 +221,19 @@ public class Ventana extends JFrame{
     
     private void colocarCajasTexto(){ //Cajas de texto de una sola linea
         cajaTexto1 = new JTextField();
-        cajaTexto1.setBounds(20, 250, 150, 30);
+        cajaTexto1.setBounds(20, 20, 150, 30);
         //cajaTexto1.setText("Hola..."); //Texto inicial en la caja de texto
         
         //System.out.println("El texto que hay en la caja es: "+cajaTexto1.getText());
         panel.add(cajaTexto1);
         
         //JTextField cajaTexto2 =new JTextField("Hola",50); //Esto solo sirve cuando el panel no esté habilitado el layout
-
+        eventoTeclado();
     }
     
     private void colocarAreasTexto(){
         areaTexto = new JTextArea ();
-        areaTexto.setBounds(20, 20, 300, 200);
+        areaTexto.setBounds(20, 150, 300, 200);
         //areaTexto.setText("Escriba el texto aqui...");
         //areaTexto.append ( "Añade más texto ");
         //areaTexto.setEditable(true); //Permitir editar el area de texto
@@ -243,7 +242,7 @@ public class Ventana extends JFrame{
         
         //ScrollPane ==> Barras de dezplazamiento 
         JScrollPane barrasDezplazamiento = new JScrollPane(areaTexto, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        barrasDezplazamiento.setBounds(20, 20, 300, 200); //Que sean iguales al bounds donde lo quiero agregar (Area de texto en este caso)
+        barrasDezplazamiento.setBounds(20, 150, 300, 200); //Que sean iguales al bounds donde lo quiero agregar (Area de texto en este caso)
         //barrasDezplazamiento.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         //barrasDezplazamiento.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         panel.add(barrasDezplazamiento);
@@ -393,22 +392,33 @@ public class Ventana extends JFrame{
     private void eventoTeclado(){
         
         KeyListener teclado = new KeyListener() {
+            
             @Override
-            public void keyTyped(KeyEvent e) {
-                
+            public void keyTyped(KeyEvent ke) { //Para que se ejecute se deben usar caracteres propios (todos menos alt, ctrl, mayusculas... asi) 
+                //areaTexto.append("KeyTyped\n");
             }
 
             @Override
-            public void keyPressed(KeyEvent e) {
-                
+            public void keyPressed(KeyEvent ke) { //presionar tecla sin necesidad de soltarla
+                //areaTexto.append("KeyPressed\n");
             }
 
             @Override
-            public void keyReleased(KeyEvent e) {
-                
+            public void keyReleased(KeyEvent ke) { //presionar y soltar, CUALQUIER tecla
+                //areaTexto.append("KeyReleased\n");
+                if(ke.getKeyChar() == 'p'){ //ese getKeyChar atrapa el caracter presionado
+                    areaTexto.append("Presionaste la letra p\n");
+                }
+                if(ke.getKeyChar() == '\n'){
+                    areaTexto.append("Presionaste enter\n");
+                }
+                if(ke.getKeyChar() == ' '){
+                    areaTexto.append("Presionaste espacio\n");                    
+                }
             }
         };
-        addKeyListener(teclado);
+        
+        cajaTexto1.addKeyListener(teclado); //Tener en cuenta que este evento esta en la caja de texto, alla se coloca el evento para que funcione
     }
 
 }

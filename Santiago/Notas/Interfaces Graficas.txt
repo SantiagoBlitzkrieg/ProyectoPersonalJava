@@ -17,7 +17,7 @@ Jframe: Clase perteneciente a la biblioteca grafica de Java para crear ventanas 
 
             setLocationRelativeTo(null);  //Aparece la ventana en el centro de la pantalla
 
-            //setResizable(False); //Restringe cambiar el tamaño de la ventana (Por default esta en true y lo permite)
+            //setResizable(False); //Restringe cambiar el tamaño de la ventana (Por default esta en true y lo permite), y permite el correcto funcionamiento del setLocationRelativeTo
             setMinimunSize(new Dimension(ancho,alto)); //Restringe el tamaño minimo al cual la ventana puede redireccionarse
 
             //this.getContentPane().setBackground(Color.BLACK); //Se obtiene el contenido de la ventana y se cambia su color a uno negro
