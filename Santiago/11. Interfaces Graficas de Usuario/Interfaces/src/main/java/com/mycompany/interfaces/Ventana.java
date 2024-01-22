@@ -421,4 +421,18 @@ public class Ventana extends JFrame{
         cajaTexto1.addKeyListener(teclado); //Tener en cuenta que este evento esta en la caja de texto, alla se coloca el evento para que funcione
     }
 
+    
+     /**OYENTE DE ACCION:   //metodo que en cuanto suceda algo con el boton pase algo
+            
+            ActionListener oyenteAccion = new ActionListener(){  //El actionListener es una interfaz... hay que poner todos sus metodos abstractos
+                
+                @Override
+                public void  actionPerformed(ActionEvent ae){  //Aqui se pone la accion que quiero que suceda
+                    etiqueta.setText("Hola "+ cajaTexto.getText());
+                }
+            }  
+            
+
+            
+            boton.addActionListener(oyenteAccion);*/
 }
